@@ -11,18 +11,18 @@
 </head>
 <body>
     <div class="container">
-            <nav class="navbar navbar-default" role="navigation">
-                <div class="container-fluid">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="index.html">Dashboard - Students Database</a>
-                    </div>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="list_students.html">Dashboard - Students Database</a>
+                </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -36,18 +36,18 @@
                 </div><!-- /.container-fluid -->
             </nav>
 
-        <div class="row">            
-            <div class="col-md-4">
-                <ul class="nav nav-pills nav-stacked" id="sidebar">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Add student</a></li>
-                    <li><a href="">Add course</a></li>
-                    <li><a href="">Assign Course to Student</a></li>
-                    <li><a href="">List of Students</a></li>
-                </ul>
-            </div>
-            
-            <div class="col-md-8">
+            <div class="row">            
+                <div class="col-md-4">
+                    <ul class="nav nav-pills nav-stacked list-group" id="sidebar">
+                        <li><a class="list-group-item active" href="dashboard.html">Home</a></li>
+                        <li><a class="list-group-item" href="add_student.php">Add student</a></li>
+                        <li><a class="list-group-item" href="add_course.php">Add course</a></li>
+                        <li><a class="list-group-item" href="assign_course.php">Assign Course to Student</a></li>
+                        <li><a class="list-group-item" href="list_students.html">List of Students</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-8">
                     <div class="row">
                         <ol class="breadcrumb">
                             <li><a href="#">Home</a></li>
@@ -55,76 +55,62 @@
                             <li class="active">Lists</li>
                         </ol>
                     </div>
-                        <div class="col-md-4">
-                            <div class="thumbnail">
-                                <div class="caption">
-                                    <h4>3 New Students Registered</h4>
-                                    <p><a href="#" class="btn btn-primary" role="button">View All</a></p>
-                            
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="thumbnail">
-                                <div class="caption">
-                                    <h4>3 New Students Registered</h4>
-                                    <p><a href="#" class="btn btn-primary" role="button">View All</a></p>
-                            
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="thumbnail">
-                                <div class="caption">
-                                    <h4>3 New Students Registered</h4>
-                                    <p><a href="#" class="btn btn-primary" role="button">View All</a></p>
-                            
-                                </div>
-                            </div>
-                        </div>
-                
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="col-md-2">
-                            <a class="icon-btn span2" href="#">
-                                <i class="glyphicon glyphicon-envelope"></i>
-                                <div>Inbox</div>
-                                <span class="badge badge-info">12</span>
-                            </a>
-                        </div>
-                        <div class="col-md-2">
-                            <a class="icon-btn span2" href="#">
-                                <i class="glyphicon glyphicon-bullhorn"></i>
-                                <div>Notification</div>
-                                <span class="badge badge-warning">3</span>
-                            </a>
-                        </div>
-                        <div class="col-md-2">
-                            <a class="icon-btn span2" href="#">
-                                <i class="glyphicon glyphicon-plane"></i>
-                                <div>Projects</div>
-                                <span class="badge badge-info">21</span>
-                            </a>
-                        </div>
-                        <div class="col-md-2">
-                            <a class="icon-btn span2" href="#">
-                                <i class="glyphicon glyphicon-thumbs-up"></i>
-                                <div>Feedback</div>
-                                <span class="badge badge-info">2</span>
-                            </a>
-                        </div>
-                        <div class="col-md-2">
-                            <a class="icon-btn span2" href="#">
-                                <i class="glyphicon glyphicon-wrench"></i>
-                                <div>Settings</div>
-                            </a>
+
+                    <div class="col-md-6">
+                        <div class="jumbotron">
+                            <h4>3 New Students Registered</h4>
+                            <p>
+                                <a href="#" class="btn btn-primary" role="button">View All</a>
+                            </p>
                         </div>
                     </div>
-                </div>
+                    <div class="col-md-6">
+                        <div class="jumbotron">
+                            <h4>4 New Courses Registered</h4>
+                            <p><a href="#" class="btn btn-primary" role="button">View All</a></p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                              <h3 class="panel-title">Panel title</h3>
+                            </div>
+                            <div class="panel-body">
+                              Panel content
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+                                  <h3 class="panel-title">Panel title</h3>
+                                </div>
+                                <div class="panel-body">
+                                  Panel content
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="panel panel-warning">
+                            <div class="panel-heading">
+                              <h3 class="panel-title">Panel title</h3>
+                            </div>
+                            <div class="panel-body">
+                              Panel content
+                            </div>                    
+                        </div>
+                    </div> 
             </div>
         </div>
+           <!--background color had default, didn't change like header, so i extended color on style-->
+            
+        <div class="row">
+        <div class="panel-footer">
+            <p>Copyright <i class="glyphicon glyphicon-copyright-mark"></i>
+            2014 . All rights reserved.</p>
+        </div>
+        </div>
     </div>
-    
     <!-- JavaScript -->
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
