@@ -54,46 +54,36 @@
                     <li class="active">Lists</li>
                 </ol>
             </div>
+            <?php
+            require_once 'db.php';
+            $ID = $_GET['student_id']; /** get the student ID **/
 
+            $query = "SELECT * FROM students WHERE id='$ID'";
+            $result = mysqli_query($con,$query);
+            $data = mysqli_fetch_object( $result );
+            ?>
             <div class="col-md-10">
                 <div class="well well-sm">
-                    <h4>Add Student</h4>
+                    <h4>Edit Student</h4>
                 </div>
             </div>
             <div class="col-md-12">
-                <form action="studentEntry.php" method="POST">
+                <form action="" method="POST">
                     <fieldset>
                         <legend>Student Registration</legend>
                         <label class="label label-info">Name: </label>
-                        <input type="text" name="studentName" id="studentName" placeholder="Your Name" tabindex="1" />
+                        <input type="text" name="name" id="studentName" disable="disable" value="<?php echo $data->name;?>" tabindex="1" />
                         <br/>
                         <label class="label label-info">Email: </label>
-                        <input type="text" name="studentEmail" id="studentEmail" placeholder="Your Email" tabindex="2" />
+                        <input type="text" name="email" id="studentEmail" disable="disable" value="<?php echo $data->email;?>" tabindex="2" />
                         <br/>
                         <label class="label label-info">ID: </label>
-                        <input type="text" name="ftflId" id="ftflId" placeholder="Your FTFL ID" tabindex="3" />
+                        <input type="text" name="ftfl_id" id="ftflId" disable="disable" value="<?php echo $data->ftfl_id;?>" tabindex="3" />
                         <br/>
                         <label class="label label-info">Phone: </label>
-                        <input type="text" name="studentPhone" id="studentPhone" placeholder="Your Phone" tabindex="4" />
+                        <input type="text" name="phone" id="studentPhone" disable="disable" value="<?php echo $data->phone;?>" tabindex="4" />
                         <br/>
 
-                        <?php
-                        require_once 'db.php';
-                        $sql="SELECT * FROM Courses";
-                        $query= mysqli_query($con,$sql);
-                        ?>
-                        <label class="label label-info">Select Course: </label>
-                        <select name="chosenCourse">
-                            <option>Choose course</option>
-                            <?php
-                            while ($data = mysqli_fetch_object($query)) {
-                                ?>
-                                <option value="<?php echo $data->id;?>"><?php echo $data->title; ?></option>
-                            <?php }
-                            ?>
-                        </select>
-                        <br/>
-                        <input type="submit" class="btn btn-default" name="submit" value="Submit" />
                     </fieldset>
                 </form>
             </div>

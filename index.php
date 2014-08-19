@@ -21,7 +21,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="list_students.html">Home - Students Database</a>
+                        <a class="navbar-brand" href="index.php">Home - Students Database</a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -46,8 +46,7 @@
                     <li><a href="dashboard.html">Home</a></li>
                     <li><a href="add_student.php">Add student</a></li>
                     <li><a href="add_course.php">Add course</a></li>
-                    <li><a href="assign_course.php">Assign Course to Student</a></li>
-                    <li><a href="list_students.html">List of Students</a></li>
+                    <li><a href="index.php">List of Students</a></li>
                 </ul>
             </div>
             <div class="col-md-8">
@@ -68,40 +67,27 @@
                         <th>Action</th>
                     </tr>
                     </thead>
-
+<?php
+    require_once 'db.php';
+    $sql = mysqli_query($con, "SELECT * FROM students");
+?>
                     <tbody>
+                    <?php
+                        while($row=mysqli_fetch_array($sql))
+                        {
+                    ?>
                     <tr>
-                        <td>1</td>
-                        <td>John</td>
-                        <td>Carter</td>
+                        <td><?php echo $row['id']; ?></td>
+                        <td><?php echo $row['name']; ?></td>
+                        <td><?php echo $row['ftfl_id']; ?></td>
                         <td>
-                            <a href="student_details.html">Details</a> |
-                            <a href="edit_student.html">Edit</a> |
-                            <a href="delete_student.html">Delete</a>
+                            <a href="student_details.php?student_id=<?php echo $row['id'];?>">Details</a> |
+                            <a href="edit_student.php?student_id=<?php echo $row['id'];?>">Edit</a> |
+                            <a href="delete_student.php?student_id=<?php echo $row['id'];?>">Delete</a>
                         </td>
                     </tr>
-
-                    <tr>
-                        <td>2</td>
-                        <td>Peter</td>
-                        <td>Parker</td>
-                        <td>
-                            <a href="student_details.html">Details</a> |
-                            <a href="edit_student.html">Edit</a> |
-                            <a href="delete_student.html">Delete</a>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>3</td>
-                        <td>John</td>
-                        <td>Rambo</td>
-                        <td>
-                            <a href="student_details.html">Details</a> |
-                            <a href="edit_student.html">Edit</a> |
-                            <a href="delete_student.html">Delete</a>
-                        </td>
-                    </tr>
+                    <?php }
+                    ?>
                     </tbody>
                 </table>
             </div>
